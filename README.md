@@ -10,9 +10,11 @@ What we look at
 * General code layout
 * Extensibility of the solution
 
+It is not as important that the implementation actually works as the overall structure and design of the API.
+
 The problem
 ===========
-You are requested to implement an API that can be used to display daily images from the rovers that are on Mars. For a start, your API should be able to get the navigation camera images from the curiosity rover from the last 10 days and limit the number of images to 3 per day. If there are no images for a particular day the result for that day should be empty.
+You are requested to implement an API that can be used to display daily images from the rovers that are on Mars. For a start, your API should be able to get the navigation camera images from the curiosity rover from the last 10 days and limit the number of images to 3 per day. If there are no images for a particular day the result for that day should be empty. The entrypoint for your API should be a minimal command line script.
 
 NASA provides a simple HTTP API that allows for querying of rover images. This is an example on how to query for the navigation camera images for a particular date:
 
@@ -26,8 +28,9 @@ In order to not query the NASA API every time the navigation camera images from 
 
 Example output
 ==============
-Your API should be able to provide output like this when queried for the last 10 days of curiosity navigation camera images (with a limit of 3 images per day).
+Your API should have a simple command line interface which just outputs json. You don't need to spend time on formatting the output. Example output for the last 10 days of curiosity navigation camera images (with a limit of 3 images per day).
 
+	$ php <my cli entrypoint.php>
 	{
 	    "2016-4-6": [],
 	    "2016-4-5": [],
